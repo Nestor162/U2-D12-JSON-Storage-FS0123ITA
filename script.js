@@ -9,19 +9,18 @@ window.addEventListener("DOMContentLoaded", () => {
   btnRemove.onclick = removeName;
 
   const nameContainer = document.createElement("em");
-  nameContainer.textContent = "Previous username: ";
+
+  body.prepend(nameContainer);
   if (checkName()) {
-    body.prepend(nameContainer);
-    nameContainer.textContent += checkName();
+    nameContainer.textContent = "Previous name: " + checkName();
   }
 });
 
 const saveName = () => {
+  nameUpdated();
   const inputName = document.getElementById("name").value;
   localStorage.setItem("username", inputName);
   document.getElementById("form-user").reset();
-
-  nameUpdated();
 };
 
 const removeName = () => {
@@ -38,14 +37,18 @@ const removeName = () => {
 
 const checkName = () => {
   let usernameInStorage = localStorage.getItem("username");
+  console.log(usernameInStorage);
   return usernameInStorage;
 };
 
 const nameUpdated = () => {
+  const nameContainer = document.querySelector("em");
   if (checkName()) {
-    const nameContainer = document.querySelector("em");
     nameContainer.textContent = "Name updated!";
     nameContainer.classList.remove("red-text");
     nameContainer.classList.add("green-text");
+  } else {
+    nameContainer.classList.remove("red-text");
+    nameContainer.textContent = "Name registered succesfully!";
   }
 };
