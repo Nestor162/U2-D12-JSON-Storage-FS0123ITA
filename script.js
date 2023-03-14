@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const btnRemove = document.getElementById("remove");
   btnRemove.onclick = removeName;
 
-  const nameContainer = document.createElement("div");
+  const nameContainer = document.createElement("em");
   nameContainer.textContent = "Previous username: ";
   if (checkName()) {
     body.prepend(nameContainer);

@@ -4,24 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Esercizi Web Storage</title>
   </head>
   <body>
-    <h3>Username Register</h3>
-    <form id="form-user">
-      <div>
-        <label for="name">Enter your name: </label>
-        <input type="text" name="name" id="name" required />
-      </div>
-      <div>
-        <button id="save" type="button">SAVE</button>
-        <button id="remove" type="button">REMOVE</button>
-      </div>
-    </form>
-
-    <h3>Timer</h3>
-    <div id="timer"></div>
-    <script src="script.js"></script>
-    <script src="timer.js"></script>
+    <div class="content">
+      <h3>Username Register</h3>
+      <form id="form-user">
+        <div>
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="button-wrapper">
+          <button id="save" type="button">SAVE</button>
+          <button id="remove" type="button">REMOVE</button>
+        </div>
+      </form>
+      <h3>Timer</h3>
+      <div id="timer"></div>
+      <script src="script.js"></script>
+      <script src="timer.js"></script>
+    </div>
   </body>
 </html>
