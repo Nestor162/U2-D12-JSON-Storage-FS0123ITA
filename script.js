@@ -7,6 +7,13 @@ window.addEventListener("DOMContentLoaded", () => {
   btnSave.onclick = saveName;
   const btnRemove = document.getElementById("remove");
   btnRemove.onclick = removeName;
+
+  const nameContainer = document.createElement("div");
+  nameContainer.textContent = "Previous username: ";
+  if (checkName()) {
+    body.prepend(nameContainer);
+    nameContainer.textContent += checkName();
+  }
 });
 
 const saveName = () => {
@@ -26,13 +33,4 @@ const removeName = () => {
 const checkName = () => {
   let usernameInStorage = localStorage.getItem("username");
   return usernameInStorage;
-};
-
-window.onload = () => {
-  const nameContainer = document.createElement("div");
-  nameContainer.textContent = "Previous username: ";
-  if (checkName()) {
-    body.prepend(nameContainer);
-    nameContainer.textContent += checkName();
-  }
 };
