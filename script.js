@@ -20,11 +20,17 @@ const saveName = () => {
   const inputName = document.getElementById("name").value;
   localStorage.setItem("username", inputName);
   document.getElementById("form-user").reset();
+
+  nameUpdated();
 };
 
 const removeName = () => {
   if (checkName()) {
     localStorage.removeItem("username");
+    const nameContainer = document.querySelector("em");
+    nameContainer.textContent = "Name deleted!";
+    nameContainer.classList.remove("green-text");
+    nameContainer.classList.add("red-text");
   } else {
     alert("username does not exist");
   }
@@ -33,4 +39,13 @@ const removeName = () => {
 const checkName = () => {
   let usernameInStorage = localStorage.getItem("username");
   return usernameInStorage;
+};
+
+const nameUpdated = () => {
+  if (checkName()) {
+    const nameContainer = document.querySelector("em");
+    nameContainer.textContent = "Name updated!";
+    nameContainer.classList.remove("red-text");
+    nameContainer.classList.add("green-text");
+  }
 };

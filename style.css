@@ -30,3 +30,13 @@ input {
   gap: 5px;
   padding-top: 12px;
 }
+
+.green-text {
+  color: #6eff6e;
+  font-weight: bold;
+}
+
+.red-text {
+  color: #be0202;
+  font-weight: bold;
+}
