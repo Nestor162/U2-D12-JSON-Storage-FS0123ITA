@@ -1,3 +1,5 @@
+// Esercizio 1 = Registrazione username usando localStorage
+
 const body = document.getElementsByTagName("body")[0];
 
 window.addEventListener("DOMContentLoaded", () => {
