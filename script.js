@@ -28,8 +28,7 @@ const removeName = () => {
     localStorage.removeItem("username");
     const nameContainer = document.querySelector("em");
     nameContainer.textContent = "Name deleted!";
-    nameContainer.classList.remove("green-text");
-    nameContainer.classList.add("red-text");
+    nameContainer.className = "red-text";
   } else {
     alert("username does not exist");
   }
@@ -45,8 +44,7 @@ const nameUpdated = () => {
   const nameContainer = document.querySelector("em");
   if (checkName()) {
     nameContainer.textContent = "Name updated!";
-    nameContainer.classList.remove("red-text");
-    nameContainer.classList.add("green-text");
+    nameContainer.className = "green-text";
   } else {
     nameContainer.classList.remove("red-text");
     nameContainer.textContent = "Name registered succesfully!";
